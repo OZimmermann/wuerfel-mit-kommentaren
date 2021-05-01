@@ -1,7 +1,7 @@
-# globale Variablen:
-gZufallszahl = 0
-b = 0
-
+def Taste_b_gedrückt(Zufallszahl: number):
+    # Anzeige der Zufallszahls als Zahl
+    basic.show_number(Zufallszahl)
+    
 def taste_a_gedrueckt(Zufallszahl: number):
     # Anzeige der Zufallszahl als Augen
     if Zufallszahl == 1:
@@ -54,18 +54,19 @@ def taste_a_gedrueckt(Zufallszahl: number):
             """)
     else:
         basic.show_string("ERROR")
+"""
 
-def Taste_b_gedrückt(Zufallszahl: number):
-    # Anzeige der Zufallszahls als Zahl
-    basic.show_number(Zufallszahl)
+globale Variablen:
 
-
+"""
+gZufallszahl = 0
+b = 0
 # ###########################################
 # Hauptprogramm
 while True:
     # Zufallszahl zwischen 1 und 6 ermitteln und in Variable gZufallszahl speichern:
     gZufallszahl = randint(1, 6)
-    # Überprüfung der Tasten 
+    # Überprüfung der Tasten
     if input.button_is_pressed(Button.A) and input.button_is_pressed(Button.B):
         # Tasten A und B gleichzeitig
         basic.show_string("FEHLER")
