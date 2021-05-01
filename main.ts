@@ -1,8 +1,3 @@
-function Taste_b_gedrückt(Zufallszahl: number) {
-    //  Anzeige der Zufallszahls als Zahl
-    basic.showNumber(Zufallszahl)
-}
-
 function taste_a_gedrueckt(Zufallszahl: number) {
     //  Anzeige der Zufallszahl als Augen
     if (Zufallszahl == 1) {
@@ -59,6 +54,11 @@ function taste_a_gedrueckt(Zufallszahl: number) {
     
 }
 
+function Taste_b_gedrückt(Zufallszahl: number) {
+    //  Anzeige der Zufallszahls als Zahl
+    basic.showNumber(Zufallszahl)
+}
+
 /** globale Variablen: */
 let gZufallszahl = 0
 let b = 0
@@ -69,8 +69,8 @@ while (true) {
     gZufallszahl = randint(1, 6)
     //  Überprüfung der Tasten
     if (input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B)) {
-        //  Tasten A und B gleichzeitig
-        basic.showString("FEHLER")
+        //  A und B gedrückt
+        basic.clearScreen()
     } else if (input.buttonIsPressed(Button.A)) {
         //  Nur Taste A
         taste_a_gedrueckt(gZufallszahl)

@@ -1,7 +1,3 @@
-def Taste_b_gedrückt(Zufallszahl: number):
-    # Anzeige der Zufallszahls als Zahl
-    basic.show_number(Zufallszahl)
-    
 def taste_a_gedrueckt(Zufallszahl: number):
     # Anzeige der Zufallszahl als Augen
     if Zufallszahl == 1:
@@ -54,6 +50,9 @@ def taste_a_gedrueckt(Zufallszahl: number):
             """)
     else:
         basic.show_string("ERROR")
+def Taste_b_gedrückt(Zufallszahl: number):
+    # Anzeige der Zufallszahls als Zahl
+    basic.show_number(Zufallszahl)
 """
 
 globale Variablen:
@@ -68,8 +67,8 @@ while True:
     gZufallszahl = randint(1, 6)
     # Überprüfung der Tasten
     if input.button_is_pressed(Button.A) and input.button_is_pressed(Button.B):
-        # Tasten A und B gleichzeitig
-        basic.show_string("FEHLER")
+        # A und B gedrückt
+        basic.clear_screen()
     elif input.button_is_pressed(Button.A):
         # Nur Taste A
         taste_a_gedrueckt(gZufallszahl)
