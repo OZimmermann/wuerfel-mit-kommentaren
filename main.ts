@@ -1,8 +1,8 @@
-// Globale Variablen:
+//  globale Variablen:
 let gZufallszahl = 0
-function on_button_pressed_a(Zufallszahl: number) {
-    let b = 0
-    //  Anzeige der Würfelzahlen als Augen
+let b = 0
+function taste_a_gedrueckt(Zufallszahl: number) {
+    //  Anzeige der Zufallszahl als Augen
     if (Zufallszahl == 1) {
         basic.showLeds(`
             . . . . .
@@ -57,31 +57,26 @@ function on_button_pressed_a(Zufallszahl: number) {
     
 }
 
-// input.on_button_pressed(Button.A, on_button_pressed_a)
-function on_button_pressed_b(Zufallszahl: number) {
-    // global zahl
-    //  Zufallszahl zwischen 1 und 6 ermitteln und in Variable Zahl speichern:
-    // zahl = randint(1, 6)
-    //  Anzeige der Zufallszahl auf Display
+function Taste_b_gedrückt(Zufallszahl: number) {
+    //  Anzeige der Zufallszahls als Zahl
     basic.showNumber(Zufallszahl)
 }
 
-// input.on_button_pressed(Button.B, on_button_pressed_b)
-// ###########################################
+//  ###########################################
 //  Hauptprogramm
 while (true) {
     //  Zufallszahl zwischen 1 und 6 ermitteln und in Variable gZufallszahl speichern:
     gZufallszahl = randint(1, 6)
+    //  Überprüfung der Tasten 
     if (input.buttonIsPressed(Button.A) && input.buttonIsPressed(Button.B)) {
-        basic.showString("ERROR")
-        
+        //  Tasten A und B gleichzeitig
+        basic.showString("FEHLER")
     } else if (input.buttonIsPressed(Button.A)) {
-        on_button_pressed_a(gZufallszahl)
-        
+        //  Nur Taste A
+        taste_a_gedrueckt(gZufallszahl)
     } else if (input.buttonIsPressed(Button.B)) {
-        on_button_pressed_b(gZufallszahl)
-        
+        //  Nur Taste B
+        Taste_b_gedrückt(gZufallszahl)
     }
-    
     
 }
